@@ -13,10 +13,10 @@ const Portfolio = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_v4gr136',     // Replace with your actual Service ID
-      'template_3d5lgia',    // Replace with your actual Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       form.current,
-      '8UnRp3HkmXhkBDkTH'      // Replace with your actual Public Key
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY     
     )
     .then(() => {
       alert('✅ Message sent! I will get back to you soon.');
