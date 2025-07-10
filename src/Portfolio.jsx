@@ -53,12 +53,12 @@ const Portfolio = () => {
   };
 
   const skills = {
-    Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
-    Frontend: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
-    Backend: ['Node.js', 'Express.js', 'Django', 'FastAPI', 'REST APIs'],
-    Database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'],
-    Tools: ['Git', 'Docker', 'AWS', 'VS Code', 'Postman', 'Figma'],
-    Others: ['GraphQL', 'Socket.io', 'Jest', 'Webpack', 'Linux']
+    Languages: ['Java', 'JavaScript'],
+    Frontend: ['React','Tailwind CSS', 'HTML5', 'CSS3'],
+    Backend: ['Node.js', 'Express.js', 'SpringBoot', 'REST APIs'],
+    Database: ['MongoDB', 'MySQL'],
+    Tools: ['Git', 'VS Code', 'Postman'],
+    Others: ['Socket.io', 'Linux']
   };
 
   const skillLogos = {
@@ -78,6 +78,7 @@ const Portfolio = () => {
   'Node.js': 'https://skillicons.dev/icons?i=nodejs',
   'Express.js': 'https://skillicons.dev/icons?i=express',
   Django: 'https://skillicons.dev/icons?i=django',
+  // 'SpringBoot': 'https://skillicons.dev/icons?i=Spring-Dark',
   FastAPI: '', // Not available on Skillicons
   'REST APIs': '',
 
@@ -106,24 +107,24 @@ const Portfolio = () => {
       title: 'friendsbook',
       description: 'Full-stack MERN application with payment integration, admin dashboard, and real-time notifications.',
       tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Socket.io'],
-      github: 'https://github.com/username/ecommerce',
-      demo: 'https://demo-ecommerce.com',
+      // github: 'https://github.com/username/ecommerce',
+      // demo: 'https://demo-ecommerce.com',
       image: '/api/placeholder/400/250'
     },
     {
-      title: 'Real-Time Chat Application',
-      description: 'WebSocket-based chat app with rooms, file sharing, and emoji reactions.',
-      tech: ['React', 'Socket.io', 'Express', 'PostgreSQL'],
-      github: 'https://github.com/username/chat-app',
-      demo: 'https://demo-chat.com',
+      title: 'AI Powered Resume Analyzer',
+      description: 'Resume Analyzer that gives ATS score along with Job Matching and Interview Preparation.',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+      // github: 'https://github.com/username/chat-app',
+      // demo: 'https://demo-chat.com',
       image: '/api/placeholder/400/250'
     },
     {
-      title: 'AI-Powered Task Manager',
-      description: 'Smart task management with AI categorization and priority suggestions.',
-      tech: ['Next.js', 'OpenAI API', 'Prisma', 'PostgreSQL'],
-      github: 'https://github.com/username/ai-tasks',
-      demo: 'https://demo-tasks.com',
+      title: 'Shrtn',
+      description: 'SpringBoot based Url Shortener Application with usage statistics.',
+      tech: ['React','SpringBoot','PostgreSQL'],
+      // github: 'https://github.com/username/ai-tasks',
+      // demo: 'https://demo-tasks.com',
       image: '/api/placeholder/400/250'
     }
   ];
@@ -141,10 +142,10 @@ const Portfolio = () => {
     },
     {
       company: 'Friendsbook',
-      role: 'Full-Stack Developer (MERN)',
+      role: 'Full-Stack Developer',
       duration: 'Oct 2024 - March 2025',
       points: [
-        'Built friendsbook - social media application using mern stack',
+        'Built friendsbook - a social media application using mern stack',
         'Used socket.io to make real time messaging feature.',
         'Used tailwindcss to make the application responsive across all screens.'
       ]
@@ -158,7 +159,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className={`text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-              Balaji
+              Balaji Puneti
             </div>
             <div className="hidden md:flex space-x-8">
               {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
@@ -193,7 +194,9 @@ const Portfolio = () => {
                 </div> */}
                 {/* <img className={`w-32 h-32 mx-auto rounded-full  p-1 animate-pulse`} src="blob:https://web.whatsapp.com/48fc9478-c02b-443f-b242-34aa4e586ccb" /> */}
               {/* </div> */} 
-              <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+            
+            {/* //image */}
+              {/* <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-white overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
@@ -201,7 +204,32 @@ const Portfolio = () => {
                   alt="Profile Pic"
                 />
               </div>
-            </div>
+            </div> */}
+
+
+  <div className="relative w-32 mx-auto group">
+  {/* Small Circular Preview */}
+  <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 overflow-hidden">
+    <div className="w-full h-full rounded-full bg-white overflow-hidden">
+      <img
+        className="w-full h-full object-cover"
+        src="/images/BALAJI.png"
+        alt="Profile Pic"
+      />
+    </div>
+  </div>
+
+  {/* Expand on Hover */}
+  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 h-0 opacity-0 group-hover:h-72 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden rounded-xl shadow-lg z-10">
+    <img
+      className="w-full h-full object-cover rounded-xl"
+      src="/images/BALAJI.png"
+      alt="Expanded Profile"
+    />
+  </div>
+</div>
+
+
 
             </div>
             <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -247,11 +275,11 @@ const Portfolio = () => {
                 Currently pursuing my Computer Science degree, I spend my time building projects that challenge me to learn new technologies.
               </p>
               <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                My expertise lies in the MERN stack, but I'm always excited to explore new frameworks and languages. 
+                My expertise lies in the MERN stack and SpringBoot, but I'm always excited to explore new frameworks and languages. 
                 I believe in writing clean, maintainable code and creating user experiences that are both beautiful and functional.
               </p>
               <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                When I'm not coding, you'll find me contributing to open-source projects, reading tech blogs, or playing chess. 
+                When I'm not coding, you'll find me learning and exploring new things. 
                 I'm always ready for a new challenge!
               </p>
             </div>
@@ -414,12 +442,19 @@ const Portfolio = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'HackTheCode Winner', desc: 'First place in college hackathon', icon: Award },
-              { title: 'React Developer Certified', desc: 'Meta React Developer Certification', icon: Award },
-              { title: 'LeetCode 500+', desc: 'Solved 500+ coding problems', icon: Code },
-              { title: 'Open Source Contributor', desc: 'Contributed to 5+ projects', icon: Github },
-              { title: 'Tech Talk Speaker', desc: 'Spoke about React at local meetup', icon: Globe },
-              { title: 'AWS Cloud Practitioner', desc: 'AWS Certified Cloud Practitioner', icon: Award }
+              // { title: 'HackTheCode Winner', desc: 'First place in college hackathon', icon: Award },
+              // { title: 'ReactJS Certified', desc: 'Infosys Springboard ReactJS Certification', icon: Award },
+              // { title: 'LeetCode 500+', desc: 'Solved 500+ coding problems', icon: Code },
+              // { title: 'Open Source Contributor', desc: 'Contributed to 5+ projects', icon: Github },
+              // { title: 'Tech Talk Speaker', desc: 'Spoke about React at local meetup', icon: Globe },
+              // { title: 'AWS Cloud Practitioner', desc: 'AWS Certified Cloud Practitioner', icon: Award },
+             { title: 'Sayukth CodeQuest', desc: 'Runner-up in Sayukth CODEQUEST Championship 2025', icon: Award },
+              { title: 'LearnSquare - Java Coding Assessment', desc: 'Ranked in the Top 10 in the Java Coding Assessment by LearnSquare', icon: Award },
+              { title: 'LeetCode 300+', desc: 'Solved 300+ coding problems on LeetCode', icon: Code },
+              { title: 'ReactJS Certified', desc: 'Certified in ReactJS by Infosys Springboard', icon: Award },
+              { title: 'Spring & Spring Boot Certified', desc: 'Completed Spring Framework 6 and Spring Boot 3 certification by Telusko EduTech', icon: Award },
+              { title: 'SQL Certified', desc: 'Completed "Introduction to SQL" by IBM', icon: Award },
+
             ].map((achievement, index) => (
               <div key={index} className={`p-6 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}>
                 <achievement.icon className="w-8 h-8 text-purple-500 mb-4" />
@@ -436,39 +471,71 @@ const Portfolio = () => {
       </section>
 
       {/* Education */}
+            
       <section id="education" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`text-4xl font-bold text-center mb-16 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Education
-          </h2>
-          <div className={`max-w-4xl mx-auto p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-              <div>
-                <h3 className={`text-2xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Bachelor of Technology in Computer Science
-                </h3>
-                <p className={`text-lg ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                  Indian Institute of Technology
-                </p>
-              </div>
-              <div className="text-right">
-                <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2021 - 2025</p>
-                <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>CGPA: 8.5/10</p>
-              </div>
-            </div>
-            <div>
-              <h4 className={`font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Relevant Coursework:</h4>
-              <div className="flex flex-wrap gap-2">
-                {['Data Structures & Algorithms', 'Database Management Systems', 'Web Development', 'Operating Systems', 'Computer Networks', 'Software Engineering', 'Machine Learning', 'Distributed Systems'].map((course) => (
-                  <span key={course} className={`px-3 py-1 rounded-full text-sm ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'}`}>
-                    {course}
-                  </span>
-                ))}
-              </div>
-            </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className={`text-4xl font-bold text-center mb-16 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+      Education
+    </h2>
+
+    <div className="space-y-8">
+      {/* B.Tech */}
+      <div className={`max-w-4xl mx-auto p-6 md:p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <div>
+            <h3 className={`text-2xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              Bachelor of Technology in Computer Science
+            </h3>
+            <p className={`text-lg ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+              RGUKT - RK Valley
+            </p>
+          </div>
+          <div className="text-right">
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2022 - 2026</p>
+            <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>CGPA: 9.0/10</p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Intermediate */}
+      <div className={`max-w-4xl mx-auto p-6 md:p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <div>
+            <h3 className={`text-2xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              Pre University Course ( M.P.C )
+            </h3>
+            <p className={`text-lg ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+              RGUKT - RK Valley
+            </p>
+          </div>
+          <div className="text-right">
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2020 - 2022</p>
+            <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>CGPA: 9.7/10</p>
+          </div>
+        </div>
+      </div>
+
+      {/* SSC */}
+      <div className={`max-w-4xl mx-auto p-6 md:p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <div>
+            <h3 className={`text-2xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              Secondary School Certificate (SSC)
+            </h3>
+            <p className={`text-lg ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+              Balavikas English Medium High School - Kadapa
+            </p>
+          </div>
+          <div className="text-right">
+            <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2018 - 2019</p>
+            <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>GPA: 10/10</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Resume Section */}
       <section id="resume" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
@@ -611,10 +678,10 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className={`text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-              Balaji
+              Balaji Puneti
             </div>
             <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mt-4 md:mt-0`}>
-              © 2025 Balaji. Built with React & Tailwind CSS.
+              Built with React & Tailwind CSS.
             </div>
           </div>
         </div>
