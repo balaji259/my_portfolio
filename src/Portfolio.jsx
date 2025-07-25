@@ -649,12 +649,9 @@ const Portfolio = () => {
           <p className={`text-lg mb-12 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Download my latest resume to learn more about my experience and qualifications.
           </p>
-          {/* <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-            <Download size={20} />
-            Download Resume (PDF)
-          </button> */}
+
            <a
-            href="/BALAJI_RESUME.pdf" // this assumes it's in the public folder
+            href="/BALAJI_PUNETI_RESUME.pdf" // this assumes it's in the public folder
             download
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
