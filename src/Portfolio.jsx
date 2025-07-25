@@ -183,32 +183,16 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <div className="mb-8">
-              {/* <div className={`w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 animate-pulse`}>
-                {/* <div className={`w-full h-full rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-4xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                  B
-                </div> */}
-                {/* <img className={`w-32 h-32 mx-auto rounded-full  p-1 animate-pulse`} src="blob:https://web.whatsapp.com/48fc9478-c02b-443f-b242-34aa4e586ccb" /> */}
-              {/* </div> */} 
-            
-            {/* //image */}
-              {/* <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-white overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="/images/BALAJI.png"
-                  alt="Profile Pic"
-                />
-              </div>
-            </div> */}
+          
 
 
   <div className="relative w-32 mx-auto group">
-  {/* Small Circular Preview */}
+ 
   <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 overflow-hidden">
     <div className="w-full h-full rounded-full bg-white overflow-hidden">
       <img
@@ -219,7 +203,7 @@ const Portfolio = () => {
     </div>
   </div>
 
-  {/* Expand on Hover */}
+ 
   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 h-0 opacity-0 group-hover:h-72 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden rounded-xl shadow-lg z-10">
     <img
       className="w-full h-full object-cover rounded-xl"
@@ -260,7 +244,126 @@ const Portfolio = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown className={`w-6 h-6 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`} />
         </div>
-      </section>
+      </section> */}
+
+       <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden flex items-center justify-center"
+    >
+      {/* Enhanced background with animated gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+        {/* Subtle animated orbs for visual interest */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Main content wrapper */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex flex-col md:flex-row md:items-center md:gap-16">
+          
+          {/* ENHANCED PROFILE IMAGE */}
+          <figure
+            className="group flex-shrink-0 mx-auto md:mx-0 mb-8 md:mb-0"
+            aria-label="Balaji profile photo"
+          >
+            {/* Floating animation container */}
+            <div className="relative animate-float">
+              {/* Glowing backdrop */}
+              <div className="absolute inset-0 w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-600/20 blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              
+              {/* Main image with enhanced gradient border */}
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full p-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-500 transition-all duration-500">
+                <img
+                  src="/images/BALAJI.png"
+                  alt="Balaji smiling in front of a blurred background"
+                  className="w-full h-full rounded-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Subtle sparkle effects */}
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/80 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300"></div>
+              <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-purple-400/60 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300" style={{ animationDelay: '0.5s' }}></div>
+            </div>
+          </figure>
+
+          {/* ENHANCED TEXT AND CTA */}
+          <div className="text-center md:text-left flex flex-col justify-center">
+            {/* Animated text entrance */}
+            <div className="animate-slideInUp">
+              <h1
+                className={`font-extrabold tracking-tight mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${
+                  darkMode ? 'text-white' : 'text-gray-900'
+                }`}
+              >
+                Hi, I'm{' '}
+                {/* <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-x">
+                  Balaji Puneti
+                </span> */}
+
+                      <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  Balaji Puneti
+                </span>
+
+
+                
+
+              </h1>
+
+              <p
+                className={`text-lg sm:text-xl font-medium mb-5 md:mb-6 ${
+                  darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}
+              >
+                Full-Stack Developer
+              </p>
+
+              <p
+                className={`max-w-xl mb-8 leading-relaxed text-base sm:text-lg md:text-xl ${
+                  darkMode ? 'text-gray-400' : 'text-gray-600'
+                }`}
+              >
+                Building digital solutions that solve real-world problems with
+                modern web technologies.
+              </p>
+            </div>
+
+            {/* Enhanced buttons with smooth animations */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-slideInUp" style={{ animationDelay: '0.3s' }}>
+              <button
+                onClick={() => scrollToSection('resume')}
+                className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold overflow-hidden transform hover:-translate-y-1 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-600"
+              >
+                <span className="relative z-10">View Resume</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              </button>
+
+              <button
+                onClick={() => scrollToSection('contact')}
+                className={`group relative px-6 py-3 sm:px-8 sm:py-4 border-2 rounded-lg font-semibold overflow-hidden transform hover:-translate-y-1 transition-all duration-300 focus-visible:outline focus-visible:outline-2 ${
+                  darkMode
+                    ? 'border-purple-500 text-purple-400 hover:text-white'
+                    : 'border-purple-600 text-purple-600 hover:text-white'
+                }`}
+              >
+                <span className="relative z-10">Contact Me</span>
+                <div className={`absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left ${
+                  darkMode ? 'bg-purple-500' : 'bg-purple-600'
+                }`}></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Enhanced bounce arrow */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <ChevronDown
+          className={`w-6 h-6 ${darkMode ? 'text-gray-400' : 'text-gray-600'} hover:text-purple-500 transition-colors duration-300`}
+          aria-hidden="true"
+        />
+      </div>
+    </section>
 
       {/* About Me */}
       <section id="about" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
@@ -602,44 +705,7 @@ const Portfolio = () => {
 
               </div>
             </div>
-            {/* <form className={`p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
-              <div className="mb-6">
-                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'}`}
-                  placeholder="Your name"
-                />
-              </div>
-              <div className="mb-6">
-                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'}`}
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div className="mb-6">
-                <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'}`}
-                  placeholder="Your message here..."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </form> */}
+            
 
                <form ref={form} onSubmit={sendEmail} className={`p-8 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
       <div className="mb-6">
