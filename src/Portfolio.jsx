@@ -53,11 +53,11 @@ const Portfolio = () => {
   };
 
   const skills = {
-    Languages: ['Java', 'JavaScript'],
-    Frontend: ['React','Tailwind CSS', 'HTML5', 'CSS3'],
+    Languages: ['Java', 'JavaScript', 'TypeScript', 'Python'],
+    Frontend: ['React','Tailwind CSS', 'HTML5', 'CSS3','Nextjs'],
     Backend: ['Node.js', 'Express.js', 'SpringBoot', 'REST APIs'],
     Database: ['MongoDB', 'MySQL'],
-    Tools: ['Git', 'VS Code', 'Postman'],
+    Tools: ['Git', 'VS Code', 'Postman', 'Docker'],
     Others: ['Socket.io', 'Linux']
   };
 
@@ -69,7 +69,7 @@ const Portfolio = () => {
   'C++': 'https://skillicons.dev/icons?i=cpp',
 
   React: 'https://skillicons.dev/icons?i=react',
-  'Next.js': 'https://skillicons.dev/icons?i=nextjs',
+  Nextjs: 'https://skillicons.dev/icons?i=nextjs',
   'Vue.js': 'https://skillicons.dev/icons?i=vue',
   'Tailwind CSS': 'https://skillicons.dev/icons?i=tailwind',
   HTML5: 'https://skillicons.dev/icons?i=html',
@@ -104,29 +104,47 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'friendsbook',
-      description: 'Full-stack MERN application with payment integration, admin dashboard, and real-time notifications.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Socket.io'],
-      // github: 'https://github.com/username/ecommerce',
-      // demo: 'https://demo-ecommerce.com',
+      title: 'Friendsbook',
+      description: 'Full-stack social media application with real time messaging feature,post management,profile management, follow-unfollown feature and googleOAuth integration.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Socket.io','Zustand','TailwindCSS'],
+      github: 'https://github.com/balaji259/friendsbook',
+      demo: 'https://friendsbook-app.onrender.com',
       image: '/api/placeholder/400/250'
     },
     {
       title: 'AI Powered Resume Analyzer',
       description: 'Resume Analyzer that gives ATS score along with Job Matching and Interview Preparation.',
-      tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
-      // github: 'https://github.com/username/chat-app',
-      // demo: 'https://demo-chat.com',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Gemini API','TailwindCSS'],
+      github: 'https://github.com/balaji259/ResumeAnalyzer_backend',
+      demo: 'https://resumehubrbt.netlify.app',
       image: '/api/placeholder/400/250'
     },
     {
       title: 'Shrtn',
       description: 'SpringBoot based Url Shortener Application with usage statistics.',
-      tech: ['React','SpringBoot','PostgreSQL'],
-      // github: 'https://github.com/username/ai-tasks',
-      // demo: 'https://demo-tasks.com',
+      tech: ['React','SpringBoot','PostgreSQL','TailwindCSS'],
+      github: 'https://github.com/balaji259/Shrtn-backend',
+      demo: 'https://shrtn-link.vercel.app',
+      image: '/api/placeholder/400/250'
+    },
+        {
+      title: 'ChatPDF',
+      description: 'ChatPDF lets you upload PDFs and instantly get answers to your questions about their content.',
+      tech: ['Python','Streamlit','Google Generative AI', 'Langchain', 'FAISS'],
+      github: 'https://github.com/balaji259/ChatPDF',
+      demo: 'https://chatpdf-lc.streamlit.app',
+      image: '/api/placeholder/400/250'
+    },
+       {
+      title: 'GoalSync',
+      description: 'Collaborative goal-setting and tracking application to help teams align and achieve their objectives together with featues like real time messaging.',
+      tech: ['React','Node.js','Express.js', 'MongoDB', 'Socket.io','Redux Toolkit', 'TailwindCSS'],
+      github: 'https://github.com/balaji259/goalsync-client',
+      demo: 'https://goalsync-ten.vercel.app',
       image: '/api/placeholder/400/250'
     }
+
+
   ];
 
   const experiences = [
@@ -613,7 +631,7 @@ const Portfolio = () => {
           </div>
           <div className="text-right">
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2020 - 2022</p>
-            <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>CGPA: 9.7/10</p>
+            <p className={`text-lg font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>CGPA: 9.8/10</p>
           </div>
         </div>
       </div>
@@ -687,10 +705,10 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="flex gap-6 mt-8">
-                <a href="https://github.com/balaji259" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-blue-400 hover:bg-gray-600' : 'bg-gray-100 text-blue-600 hover:bg-gray-200'} transition-all duration-300 hover:-translate-y-1`}>
+                <a href="https://github.com/balaji259" target="blank" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-blue-400 hover:bg-gray-600' : 'bg-gray-100 text-blue-600 hover:bg-gray-200'} transition-all duration-300 hover:-translate-y-1`}>
                   <Github size={24} />
                 </a>
-                <a href="https://www.linkedin.com/in/balaji-puneti" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-blue-400 hover:bg-gray-600' : 'bg-gray-100 text-blue-600 hover:bg-gray-200'} transition-all duration-300 hover:-translate-y-1`}>
+                <a href="https://www.linkedin.com/in/balaji-puneti" target="blank" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-blue-400 hover:bg-gray-600' : 'bg-gray-100 text-blue-600 hover:bg-gray-200'} transition-all duration-300 hover:-translate-y-1`}>
                   <Linkedin size={24} />
                 </a>
                 {/* <a href="#" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 text-blue-400 hover:bg-gray-600' : 'bg-gray-100 text-blue-600 hover:bg-gray-200'} transition-all duration-300 hover:-translate-y-1`}>
