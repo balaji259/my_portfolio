@@ -1,1 +1,226 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: 'Outfit', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --color-base:       #070B12;
+  --color-surface:    #0D1421;
+  --color-elevated:   #111827;
+  --color-glass:      rgba(17,24,39,0.55);
+  --color-border:     rgba(255,255,255,0.07);
+  --color-violet:     #7C6FFF;
+  --color-blue:       #38BDF8;
+  --color-coral:      #FB7185;
+  --color-mint:       #34D399;
+  --color-txt:        #F1F5F9;
+  --color-txt2:       #94A3B8;
+  --color-txt3:       #475569;
+  --color-txt4:       #2D3748;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: #070B12;
+    color: #F1F5F9;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: #7C6FFF; color: #fff; }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(124,111,255,0.35); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(124,111,255,0.65); }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #7C6FFF;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ── Keyframes (only what Tailwind can't express) ── */
+@keyframes orbit {
+  from { transform: rotate(var(--start)) translateX(var(--r)) rotate(calc(-1 * var(--start))); }
+  to   { transform: rotate(calc(var(--start) + 360deg)) translateX(var(--r)) rotate(calc(-1 * (var(--start) + 360deg))); }
+}
+@keyframes orbitReverse {
+  from { transform: rotate(var(--start)) translateX(var(--r)) rotate(calc(-1 * var(--start))); }
+  to   { transform: rotate(calc(var(--start) - 360deg)) translateX(var(--r)) rotate(calc(-1 * (var(--start) - 360deg))); }
+}
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(18px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; } to { opacity:1; }
+}
+@keyframes blink {
+  0%,49% { opacity:1; } 50%,100% { opacity:0; }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes gradient-x {
+  0%,100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@keyframes reveal-bar {
+  from { width: 0; }
+  to   { width: var(--bar-w, 100%); }
+}
+@keyframes scale-in {
+  from { opacity:0; transform: scale(0.93); }
+  to   { opacity:1; transform: scale(1); }
+}
+@keyframes slide-left {
+  from { opacity:0; transform: translateX(-20px); }
+  to   { opacity:1; transform: translateX(0); }
+}
+
+/* ── Utility classes ── */
+.animate-fade-up   { animation: fadeUp 0.65s ease-out both; }
+.animate-fade-in   { animation: fadeIn 0.5s ease-out both; }
+.animate-float     { animation: floatY 3.8s ease-in-out infinite; }
+.animate-blink     { animation: blink 1s step-start infinite; }
+.animate-scale-in  { animation: scale-in 0.5s ease-out both; }
+.animate-slide-left { animation: slide-left 0.6s ease-out both; }
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(1);   opacity: 0.3; }
+  50%       { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* ── Orbit pill system ── */
+.orbit-wrap {
+  position: relative;
+  width: 460px;
+  height: 460px;
+}
+.orbit-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orbit-pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14px;
+  margin-left: -14px;
+  transform-origin: 0 0;
+  animation: orbit var(--dur, 12s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.orbit-pill-rev {
+  animation: orbitReverse var(--dur, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(17,24,39,0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ── Gradient text ── */
+.grad-text {
+  background: linear-gradient(135deg, #7C6FFF 0%, #38BDF8 55%, #34D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grad-text-warm {
+  background: linear-gradient(135deg, #FB7185 0%, #7C6FFF 45%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animated shimmer on name ── */
+.shimmer-text {
+  background: linear-gradient(
+    120deg,
+    #F1F5F9 0%,
+    #F1F5F9 30%,
+    #7C6FFF 45%,
+    #38BDF8 55%,
+    #F1F5F9 70%,
+    #F1F5F9 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Timeline dot ── */
+.timeline-line {
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(124,111,255,0.5), transparent);
+}
+
+/* ── Glow rings ── */
+.glow-violet { box-shadow: 0 0 40px rgba(124,111,255,0.12), 0 0 80px rgba(124,111,255,0.05); }
+.glow-blue   { box-shadow: 0 0 40px rgba(56,189,248,0.12), 0 0 80px rgba(56,189,248,0.05); }
+
+/* ── Noise overlay ── */
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── Section grid bg ── */
+.section-grid {
+  background-image:
+    linear-gradient(rgba(124,111,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,111,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Spin-slow for orbit outer ring ── */
+.spin-slow { animation: spin-slow 30s linear infinite; }
+.spin-slow-rev { animation: spin-slow 24s linear infinite reverse; }
+
+/* ── Gradient animate ── */
+.animate-gradient { 
+  background-size: 200% 200%; 
+  animation: gradient-x 4s ease infinite; 
+}
+
+/* ── Progress bar reveal ── */
+.bar-reveal { animation: reveal-bar 1.2s cubic-bezier(0.4,0,0.2,1) both; }
+
+/* ── Hover lift ── */
+.hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.hover-lift:hover { transform: translateY(-4px); }
