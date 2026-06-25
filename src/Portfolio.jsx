@@ -10,6 +10,7 @@ import {
   SiJavascript, SiTypescript, SiOpenjdk, SiPython, SiMysql,
   SiAmazonwebservices, SiGit, SiVercel, SiSequelize, SiSocketdotio
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
 /* ═══════════════════════════════════════════════
@@ -29,10 +30,10 @@ const ORBIT_SKILLS = [
   { Icon: SiNextdotjs,   tip: 'Next.js',     ring: 2, color: '#cccccc', bg: 'rgba(200,200,200,0.08)', border: 'rgba(200,200,200,0.25)', dur: '28s', start: '150deg' },
   { Icon: SiTailwindcss, tip: 'Tailwind',    ring: 2, color: '#06B6D4', bg: 'rgba(6,182,212,0.15)',   border: 'rgba(6,182,212,0.35)',   dur: '28s', start: '260deg' },
   // Ring 3 — infra / db (outer, 36s CW)
-  { Icon: SiPostgresql,  tip: 'PostgreSQL',  ring: 3, color: '#4169E1', bg: 'rgba(65,105,225,0.15)',  border: 'rgba(65,105,225,0.35)',  dur: '36s', start: '20deg'  },
-  { Icon: SiMongodb,     tip: 'MongoDB',     ring: 3, color: '#47A248', bg: 'rgba(71,162,72,0.15)',   border: 'rgba(71,162,72,0.35)',   dur: '36s', start: '130deg' },
-  { Icon: SiAmazonwebservices, tip: 'AWS',   ring: 3, color: '#FF9900', bg: 'rgba(255,153,0,0.15)',   border: 'rgba(255,153,0,0.35)',   dur: '36s', start: '240deg' },
-  { Icon: SiDocker,      tip: 'Docker',      ring: 3, color: '#2496ED', bg: 'rgba(36,150,237,0.15)',  border: 'rgba(36,150,237,0.35)',  dur: '36s', start: '320deg' },
+  { Icon: SiPostgresql,  tip: 'PostgreSQL',  ring: 3, color: '#4169E1', bg: 'rgba(65,105,225,0.15)',  border: 'rgba(65,105,225,0.35)',  dur: '36s', start: '0deg'  },
+  { Icon: SiMongodb,     tip: 'MongoDB',     ring: 3, color: '#47A248', bg: 'rgba(71,162,72,0.15)',   border: 'rgba(71,162,72,0.35)',   dur: '36s', start: '90deg' },
+  { Icon: SiAmazonwebservices, tip: 'AWS',   ring: 3, color: '#FF9900', bg: 'rgba(255,153,0,0.15)',   border: 'rgba(255,153,0,0.35)',   dur: '36s', start: '180deg' },
+  { Icon: SiDocker,      tip: 'Docker',      ring: 3, color: '#2496ED', bg: 'rgba(36,150,237,0.15)',  border: 'rgba(36,150,237,0.35)',  dur: '36s', start: '270deg' },
 ];
 
 /* Orbit container is 460px; center at 230px.
@@ -54,7 +55,7 @@ const SKILL_CATEGORIES = [
     skills: [
       { name: 'JavaScript', Icon: SiJavascript,  color: '#F7DF1E' },
       { name: 'TypeScript', Icon: SiTypescript,  color: '#3178C6' },
-      { name: 'Java',       Icon: SiOpenjdk,     color: '#ED8B00' },
+      { name: 'Java',       Icon: FaJava,        color: '#ED8B00' },
       { name: 'Python',     Icon: SiPython,      color: '#3776AB' },
     ],
   },
@@ -367,17 +368,12 @@ const OrbitSystem = () => (
         <div className="absolute w-28 h-28 rounded-full border border-violet-500/20 animate-pulse" />
         <div className="absolute w-20 h-20 rounded-full border border-violet-500/30" style={{ animation: 'pulseRing 3s ease-in-out infinite' }} />
         {/* Core */}
-        <div className="relative w-16 h-16 rounded-full flex items-center justify-center"
+        <div className="relative w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-[#1e1b4b] to-[#0c4a6e] border border-violet-500/50"
           style={{
-            background: 'linear-gradient(135deg, rgba(124,111,255,0.4) 0%, rgba(56,189,248,0.3) 100%)',
-            border: '1px solid rgba(124,111,255,0.5)',
             boxShadow: '0 0 30px rgba(124,111,255,0.3), 0 0 60px rgba(124,111,255,0.1), inset 0 0 20px rgba(124,111,255,0.1)',
-            backdropFilter: 'blur(12px)',
           }}
         >
-          <span className="font-display font-bold text-[11px] text-white leading-tight text-center">
-            Full<br />Stack
-          </span>
+          <span className="text-4xl transform -translate-y-0.5" role="img" aria-label="developer">👨‍💻</span>
         </div>
       </div>
     </div>
@@ -472,12 +468,12 @@ const SkillTile = ({ name, Icon, color }) => (
 );
 
 const SkillCategoryCard = ({ cat }) => (
-  <div className="glass-card rounded-2xl p-5 hover:border-white/12 transition-all duration-300">
+  <div className="glass-card rounded-2xl p-5 hover:border-white/12 transition-all duration-300 h-full">
     <div className="flex items-center gap-2 mb-4">
       <span className={`w-1.5 h-1.5 rounded-full ${cat.dot}`} />
       <h3 className={`font-mono text-[11px] uppercase tracking-[0.18em] ${cat.color}`}>{cat.label}</h3>
     </div>
-    <div className="grid grid-cols-4 gap-2">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(76px,1fr))] gap-2">
       {cat.skills.map(s => (
         <SkillTile key={s.name} name={s.name} Icon={s.Icon} color={s.color} />
       ))}
@@ -537,19 +533,27 @@ const Portfolio = () => {
   const handleSubmit = e => {
     e.preventDefault();
     setFormStatus('sending');
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS Error: Environment variables are missing (.env). Cannot send email.');
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 4000);
+      return;
+    }
+
     emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(() => {
         setFormStatus('sent');
         formRef.current?.reset();
         setTimeout(() => setFormStatus('idle'), 4000);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
         setFormStatus('error');
         setTimeout(() => setFormStatus('idle'), 4000);
       });
@@ -692,8 +696,8 @@ const Portfolio = () => {
                 style={{ animationDelay: '0.26s' }}
               >
                 <span className="grad-text font-semibold">Software Developer</span>
-                <span className="text-slate-600 mx-3">·</span>
-                <span className="text-slate-400">Full-Stack · Backend · Systems</span>
+                {/* <span className="text-slate-600 mx-3">·</span>
+                <span className="text-slate-400">Full-Stack · Backend Engineer</span> */}
               </p>
 
               {/* Bio */}
