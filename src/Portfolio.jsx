@@ -111,10 +111,10 @@ const PROJECTS = [
     tag: 'Project Management Platform',
     description: 'Multi-org Kanban platform with role-based access, real-time task-level chat via Socket.IO, and a full activity log tracking every workspace event. Secure onboarding powered by Clerk OAuth.',
     tech: ['Next.js', 'Node.js', 'MongoDB', 'Socket.IO', 'Clerk', 'Tailwind'],
-    highlight: '2.8M',
-    highlightLabel: 'rows backfilled',
-    github: 'https://github.com/balaji259',
-    demo: '#',
+    // highlight: '2.8M',
+    // highlightLabel: 'rows backfilled',
+    github: 'https://github.com/balaji259/trackflow',
+    // demo: '#',
     accent: 'from-violet-500/20 to-blue-500/10',
     dot: 'bg-violet-400',
   },
@@ -124,10 +124,10 @@ const PROJECTS = [
     tag: 'AI-Powered Resume Analyzer',
     description: 'Three-module AI platform — ATS Checker, Job Matcher, Interview Prep — driven by the Google Gemini API. Structured JSON prompt engineering over parsed PDF & DOCX documents.',
     tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Gemini API'],
-    highlight: '3',
-    highlightLabel: 'AI modules',
-    github: 'https://github.com/balaji259',
-    demo: '#',
+    // highlight: '3',
+    // highlightLabel: 'AI modules',
+    github: 'https://github.com/balaji259/ResumeAnalyzer_backend',
+    // demo: '#',
     accent: 'from-blue-500/20 to-cyan-500/10',
     dot: 'bg-blue-400',
   },
@@ -137,10 +137,10 @@ const PROJECTS = [
     tag: 'Social Platform',
     description: 'Full-stack social app with Google Sign-In, real-time messaging over Socket.IO, post creation, and follow/unfollow — onboarded 100+ users from day one.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.IO'],
-    highlight: '100+',
-    highlightLabel: 'users onboarded',
-    github: 'https://github.com/balaji259',
-    demo: '#',
+    // highlight: '100+',
+    // highlightLabel: 'users onboarded',
+    github: 'https://github.com/balaji259/friendsbook',
+    // demo: '#',
     accent: 'from-emerald-500/20 to-teal-500/10',
     dot: 'bg-emerald-400',
   },
@@ -150,10 +150,10 @@ const PROJECTS = [
     tag: 'URL Shortener',
     description: 'Spring Boot URL shortener with click analytics — per-link statistics, redirect performance tracking, and a clean React dashboard displaying usage metrics.',
     tech: ['Spring Boot', 'PostgreSQL', 'React', 'Java'],
-    highlight: 'O(1)',
-    highlightLabel: 'redirect lookup',
-    github: 'https://github.com/balaji259',
-    demo: '#',
+    // highlight: 'O(1)',
+    // highlightLabel: 'redirect lookup',
+    github: 'https://github.com/balaji259/Shrtn-backend',
+    // demo: '#',
     accent: 'from-orange-500/20 to-yellow-500/10',
     dot: 'bg-orange-400',
   },
@@ -170,7 +170,7 @@ const EXPERIENCE = [
     dot: 'bg-violet-400',
     tagColor: 'bg-violet-500/15 text-violet-300 border-violet-500/25',
     highlights: [
-      { stat: '2.8M', desc: 'database rows migrated via ULID backfill scripts — zero N+1 queries, no production table locks' },
+      { stat: '2.8M', desc: 'database rows migrated via ULID backfill scripts' },
       { stat: '45+', desc: 'routes patched across two microservices to adopt the resolve-at-facade ULID pattern' },
       { stat: 'SQS', desc: 'async pipeline built for inactive-lead reallocation, decoupled into a dedicated Lambda handler with batch failure tracking' },
       { stat: '∞ 0', desc: 'DLQ messages — student booking metrics built end-to-end with SQS handler, migrations, service & facade layers' },
@@ -852,7 +852,7 @@ const Portfolio = () => {
               What I work with
             </h2>
             <p className="text-slate-500 text-base mb-14 max-w-xl">
-              The tools I reach for to build things. Click to see them in action in my projects.
+              The tools I reach for to build things.
             </p>
           </Reveal>
 
@@ -926,14 +926,14 @@ const Portfolio = () => {
                       >
                         <Github size={13} /> Code
                       </a>
-                      <a
+                      {/* <a
                         href={p.demo}
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center gap-1.5 font-mono text-xs text-slate-500 hover:text-blue-400 transition-colors duration-200"
                       >
                         <ExternalLink size={13} /> Live demo
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>
